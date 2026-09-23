@@ -1,0 +1,2 @@
+import 'dotenv/config'; import connectDB from '../config/db.js'; import User from '../models/User.js'
+await connectDB();const {ADMIN_NAME,ADMIN_EMAIL,ADMIN_PASSWORD}=process.env;if(!ADMIN_EMAIL||!ADMIN_PASSWORD)throw new Error('Set ADMIN_EMAIL and ADMIN_PASSWORD first');const exists=await User.findOne({email:ADMIN_EMAIL.toLowerCase()});if(exists){console.log('Admin already exists')}else{await User.create({name:ADMIN_NAME||'BuildByTwo Admin',email:ADMIN_EMAIL,password:ADMIN_PASSWORD});console.log('Admin created')}process.exit()

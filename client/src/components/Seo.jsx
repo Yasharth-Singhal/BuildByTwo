@@ -1,0 +1,2 @@
+import { Helmet } from 'react-helmet-async'
+export default function Seo({ title, description }) { const full = title ? `${title} — BuildByTwo` : 'BuildByTwo — Creative × Technology Studio'; return <Helmet><title>{full}</title><meta name="description" content={description || 'BuildByTwo is a two-person creative-tech studio for brands that need thoughtful design and solid development.'}/><meta property="og:title" content={full}/><meta property="og:description" content={description || 'Creative meets code.'}/><meta property="og:type" content="website"/></Helmet> }

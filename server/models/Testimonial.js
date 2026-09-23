@@ -1,0 +1,1 @@
+import mongoose from 'mongoose'; const schema=new mongoose.Schema({name:{type:String,required:true},company:String,project:String,testimonial:{type:String,required:true},image:String,active:{type:Boolean,default:false}},{timestamps:true});export default mongoose.model('Testimonial',schema)

@@ -1,0 +1,2 @@
+import { Router } from 'express'; import rateLimit from 'express-rate-limit'; import { getProjects,getFeatured,getProject,createEnquiry } from '../controllers/publicController.js'
+const router=Router();const contactLimit=rateLimit({windowMs:15*60*1000,limit:5,standardHeaders:true,legacyHeaders:false,message:{message:'Too many attempts. Please wait a few minutes and try again.'}});router.get('/projects',getProjects);router.get('/projects/featured',getFeatured);router.get('/projects/:slug',getProject);router.post('/contact',contactLimit,createEnquiry);export default router
