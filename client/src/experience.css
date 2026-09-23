@@ -279,10 +279,10 @@ main:focus { outline: none; }
   .convergence-top p { font-size: 12px; }
   .convergence-section h2 { font-size: clamp(49px,9vw,74px); margin: 50px 0; }
   .convergence-panels { grid-template-columns: 1fr; }
-  .convergence-panels article { padding: 30px; transform: none !important; }
+  .convergence-panels article { padding: 30px; }
   .convergence-panels h3 { font-size: 48px; margin: 45px 0; }
   .convergence-join { top: 50%; left: 50%; }
-  .convergence-signature { flex-direction: column; align-items: start; gap: 10px; opacity: 1 !important; transform: none !important; }
+  .convergence-signature { flex-direction: column; align-items: start; gap: 10px; }
   .convergence-signature > span { font-size: clamp(46px,11vw,70px); }
   .why-grid { gap: 35px; }
   .why-grid > div:first-child { position: static; }
@@ -320,6 +320,26 @@ main:focus { outline: none; }
   .expertise-strip .shell { gap: 7px; letter-spacing: .02em; }
   .convergence-panels h3 { font-size: 40px; }
   .process-steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 799px) and (prefers-reduced-motion: no-preference) {
+  .static-sculpture { transform-origin: 50% 52%; animation: mobile-sculpture-float 5.5s ease-in-out infinite; }
+  .sculpture-label i { animation: mobile-label-pulse 2.2s ease-in-out infinite; }
+  .code-label i { animation-delay: 1.1s; }
+  .scroll-cue svg { animation: mobile-scroll-cue 1.8s ease-in-out infinite; }
+  .btn:active { transform: scale(.97); }
+  .project-card:active .project-image img { transform: scale(1.025); }
+  @keyframes mobile-sculpture-float {
+    0%, 100% { transform: translate3d(0, 0, 0) rotate(-1deg); }
+    50% { transform: translate3d(0, -12px, 0) rotate(1deg); }
+  }
+  @keyframes mobile-label-pulse {
+    0%, 100% { transform: scale(1); opacity: .7; }
+    50% { transform: scale(1.8); opacity: 1; }
+  }
+  @keyframes mobile-scroll-cue {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
 }
 @media (hover: none), (pointer: coarse) {
   .studio-cursor { display: none; }
