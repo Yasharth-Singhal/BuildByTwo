@@ -1,21 +1,22 @@
-import { ArrowUpRight, PenTool, Braces, PanelsTopLeft } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import TiltCard from '../components/TiltCard'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
+import ServiceIcon from '../components/ServiceIcon'
 
 const services = [
-  { number: '01', name: 'Design', icon: PenTool, type: 'design', title: 'A point of view.\nMade visible.', copy: 'Brand systems, identities and visual stories that make you unmistakable.', tags: ['Brand identity', 'Graphic design', 'Art direction'] },
-  { number: '02', name: 'Development', icon: Braces, type: 'development', title: 'Looks considered.\nWorks beautifully.', copy: 'Thoughtful websites and applications, engineered around the people using them.', tags: ['Websites', 'MERN applications', 'UI/UX'] },
-  { number: '03', name: 'Social', icon: PanelsTopLeft, type: 'social', title: 'Less noise.\nMore connection.', copy: 'A consistent voice and a content system that gives your audience a reason to stay.', tags: ['Content strategy', 'Social media', 'Campaigns'] },
+  { number: '01', name: 'Design', type: 'design', title: 'A point of view.\nMade visible.', copy: 'Brand systems, identities and visual stories that make you unmistakable.', tags: ['Brand identity', 'Graphic design', 'Art direction'] },
+  { number: '02', name: 'Development', type: 'development', title: 'Looks considered.\nWorks beautifully.', copy: 'Thoughtful websites and applications, engineered around the people using them.', tags: ['Websites', 'MERN applications', 'UI/UX'] },
+  { number: '03', name: 'Social', type: 'social', title: 'Less noise.\nMore connection.', copy: 'A consistent voice and a content system that gives your audience a reason to stay.', tags: ['Content strategy', 'Social media', 'Campaigns'] },
 ]
 
 export default function StudioServices() {
   return <section className="studio-services section"><div className="shell">
     <SectionHeading eyebrow="02 / What we bring" title={<>Good looks.<br/>Great thinking.</>} copy="One connected team for how your brand looks, sounds and works."/>
-    <div className="depth-service-grid">{services.map(({ number, name, icon: Icon, type, title, copy, tags }, index) =>
+    <div className="depth-service-grid">{services.map(({ number, name, type, title, copy, tags }, index) =>
       <Reveal key={name} delay={index * 0.07}><TiltCard className={`depth-service service-${type}`}>
-        <div className="service-kicker"><span>{number} / {name}</span><Icon size={19}/></div>
-        <div className={`service-symbol symbol-${type}`} aria-hidden="true">{type === 'design' ? <span>Aa<span>✳</span></span> : type === 'development' ? <span><b>[</b><i> / </i><b>]</b></span> : <span><i/><i/><i/></span>}</div>
+        <div className="service-kicker"><span>{number} / {name}</span><span aria-hidden="true">↗</span></div>
+        <ServiceIcon type={type} size="card" label={`${name} — procedural three-dimensional studio glyph`}/>
         <h3>{title}</h3><p>{copy}</p><ul>{tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
         <a href={`/services/#${type}`} className="service-card-link">Explore {name.toLowerCase()}<ArrowUpRight size={20}/></a>
       </TiltCard></Reveal>

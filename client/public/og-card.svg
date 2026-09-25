@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f3f0e8"/>
+  <path d="M830 107c-103 12-169 98-154 198s101 163 201 149 163-100 149-200-96-159-196-147Z" fill="none" stroke="#ed743b" stroke-width="68"/>
+  <rect x="832" y="193" width="234" height="234" rx="35" transform="rotate(18 949 310)" fill="none" stroke="#294cdd" stroke-width="58"/>
+  <text x="72" y="96" fill="#11110f" font-family="Arial, sans-serif" font-size="27" font-weight="700">BuildBy<tspan fill="#294cdd">Two</tspan></text>
+  <text x="72" y="303" fill="#11110f" font-family="Arial, sans-serif" font-size="91" font-weight="700" letter-spacing="-5">Creative</text>
+  <text x="72" y="397" fill="#11110f" font-family="Arial, sans-serif" font-size="91" font-weight="700" letter-spacing="-5">meets <tspan fill="#294cdd">code.</tspan></text>
+  <text x="76" y="522" fill="#5f5b52" font-family="Arial, sans-serif" font-size="26">Two minds. One studio. Design × development.</text>
+</svg>

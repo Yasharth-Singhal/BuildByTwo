@@ -19,7 +19,7 @@ export default function Navbar() {
   }, [open])
   return <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
     <nav className="nav shell" aria-label="Primary navigation">
-      <a className="wordmark" href="/" aria-label="BuildByTwo home">BuildBy<span>Two</span><i>2</i></a>
+      <a className="wordmark" href="/">BuildBy<span>Two</span><i aria-hidden="true">2</i></a>
       <button ref={toggle} className="menu-button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="primary-links" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button>
       <div id="primary-links" className={`nav-links ${open ? 'open' : ''}`}>
         {['Home','Services','Work','About','Contact'].map(label => {
